@@ -1,5 +1,5 @@
 import { createRoot } from 'react-dom/client';
-import { StrictMode, CSSProperties } from 'react';
+import { StrictMode, CSSProperties, useState } from 'react';
 import clsx from 'clsx';
 
 import { Article } from './components/article/Article';
@@ -13,19 +13,30 @@ const domNode = document.getElementById('root') as HTMLDivElement;
 const root = createRoot(domNode);
 
 const App = () => {
+	const [articleStyle, setArticleStyle] = useState(defaultArticleState);
+
+  // Функция для обновления стилей статьи
+  const handleStyleChange = (newStyle: typeof articleStyle) => {
+    setArticleStyle(newStyle);
+  };
+
+  // Функция для сброса стилей статьи к значениям по умолчанию
+  const handleStyleReset = () => {
+    setArticleStyle(defaultArticleState);
+  };
 	return (
 		<div
 			className={clsx(styles.main)}
 			style={
 				{
-					'--font-family': defaultArticleState.fontFamilyOption.value,
-					'--font-size': defaultArticleState.fontSizeOption.value,
-					'--font-color': defaultArticleState.fontColor.value,
-					'--container-width': defaultArticleState.contentWidth.value,
-					'--bg-color': defaultArticleState.backgroundColor.value,
+					'--font-family': articleStyle.fontFamilyOption.value,
+					'--font-size': articleStyle.fontSizeOption.value,
+					'--font-color': articleStyle.fontColor.value,
+					'--container-width': articleStyle.contentWidth.value,
+					'--bg-color': articleStyle.backgroundColor.value,
 				} as CSSProperties
 			}>
-			<ArticleParamsForm />
+			<ArticleParamsForm onStyleChange={handleStyleChange} onStyleReset={handleStyleReset} />
 			<Article />
 		</div>
 	);
