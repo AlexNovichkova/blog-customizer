@@ -15,15 +15,15 @@ const root = createRoot(domNode);
 const App = () => {
 	const [articleStyle, setArticleStyle] = useState(defaultArticleState);
 
-  // Функция для обновления стилей статьи
-  const handleStyleChange = (newStyle: typeof articleStyle) => {
-    setArticleStyle(newStyle);
-  };
+	// Функция для обновления стилей статьи
+	const handleStyleChange = (newStyle: typeof articleStyle) => {
+		setArticleStyle(newStyle);
+	};
 
-  // Функция для сброса стилей статьи к значениям по умолчанию
-  const handleStyleReset = () => {
-    setArticleStyle(defaultArticleState);
-  };
+	// Функция для сброса стилей статьи к значениям по умолчанию
+	const handleStyleReset = () => {
+		setArticleStyle(defaultArticleState);
+	};
 	return (
 		<div
 			className={clsx(styles.main)}
@@ -36,7 +36,10 @@ const App = () => {
 					'--bg-color': articleStyle.backgroundColor.value,
 				} as CSSProperties
 			}>
-			<ArticleParamsForm onStyleChange={handleStyleChange} onStyleReset={handleStyleReset} />
+			<ArticleParamsForm
+				onStyleChange={handleStyleChange}
+				onStyleReset={handleStyleReset}
+			/>
 			<Article />
 		</div>
 	);

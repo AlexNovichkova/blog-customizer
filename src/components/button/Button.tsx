@@ -14,8 +14,11 @@ export const Button = ({
 	className?: string;
 }) => {
 	return (
-		<button className={clsx(styles.button, className)} type={type} onClick={onClick}>
-			<Text weight={800} uppercase >
+		<button
+			className={clsx(styles.button, className)}
+			type={type}
+			onClick={onClick}>
+			<Text weight={800} uppercase>
 				{title}
 			</Text>
 		</button>

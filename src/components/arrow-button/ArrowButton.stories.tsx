@@ -8,14 +8,13 @@ const meta: Meta<typeof ArrowButton> = {
 
 export default meta;
 type Story = StoryObj<typeof ArrowButton>;
-const mockOnClick: OnClick = () => {
-};
+const mockOnClick: OnClick = () => {};
 
 export const ArrowButtonStory: Story = {
 	render: () => {
 		return (
 			<>
-				<ArrowButton onClick={mockOnClick} isOpen ={false} />
+				<ArrowButton onClick={mockOnClick} isOpen={false} />
 			</>
 		);
 	},
