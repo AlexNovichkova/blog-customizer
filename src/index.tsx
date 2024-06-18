@@ -15,11 +15,6 @@ const root = createRoot(domNode);
 const App = () => {
 	const [articleStyle, setArticleStyle] = useState(defaultArticleState);
 
-	// Функция для обновления стилей статьи
-	const handleStyleChange = (newStyle: typeof articleStyle) => {
-		setArticleStyle(newStyle);
-	};
-
 	// Функция для сброса стилей статьи к значениям по умолчанию
 	const handleStyleReset = () => {
 		setArticleStyle(defaultArticleState);
@@ -37,7 +32,7 @@ const App = () => {
 				} as CSSProperties
 			}>
 			<ArticleParamsForm
-				onStyleChange={handleStyleChange}
+				onStyleChange={setArticleStyle}
 				onStyleReset={handleStyleReset}
 			/>
 			<Article />

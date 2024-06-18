@@ -127,7 +127,7 @@ export const ArticleParamsForm = ({
 				className={clsx(styles.container, {
 					[styles.container_open]: isFormOpen,
 				})}>
-				{isFormOpen && (
+
 					<form
 						className={clsx(styles.form)}
 						onSubmit={handleSubmit}
@@ -180,7 +180,7 @@ export const ArticleParamsForm = ({
 							/>
 						</div>
 					</form>
-				)}
+
 			</aside>
 		</>
 	);
