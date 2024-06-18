@@ -1,4 +1,5 @@
 .container {
+	cursor: pointer;
 	position: fixed;
 	top: 31px;
 	display: flex;
@@ -11,6 +12,14 @@
 	background-color: #000000;
 	border-right: 1px;
 	transition: transform 0.5s ease;
+}
+
+.container:hover {
+	background-color: #ffc802;
+}
+
+.container:active {
+	background-color: #787878;
 }
 
 .container_open {
